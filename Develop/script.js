@@ -1,18 +1,6 @@
 // WHEN I open the planner
 // THEN the current date is displayed at the top of the calendar
     // Thurs, Oct 6 2022
-    var today = moment();
-    // $(document).ready(function () {
-        // var today = moment();
-        // // today = moment(new Date()),
-        // refreshToday = function(){
-        //     today = moment(new Date()),
-        $("#currentDay").text(today.format("dddd, MMMM Do YYYY"));
-    //     };
-    //     refreshToday();
-    //     setInterval(refreshToday(),1000);
-    // });
-    
 // WHEN I scroll down
 // THEN I am presented with timeblocks for standard business hours
     // 9am to 5pm
@@ -27,3 +15,9 @@
 // THEN the text for that event is saved in local storage
 // WHEN I refresh the page
 // THEN the saved events persist
+
+
+//loop through textareaS, for each textarea, get the id value, and compare to current time
+
+//event.target or 'this' key word
+//traverse the DOM : to text area and store value of that text area
