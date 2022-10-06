@@ -21,3 +21,8 @@
 
 //event.target or 'this' key word
 //traverse the DOM : to text area and store value of that text area
+
+
+
+var today = moment();
+$("#current-day").text(today.format("dddd, MMMM Do"));
