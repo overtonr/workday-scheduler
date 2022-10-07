@@ -6,7 +6,9 @@ var saveButton = document.getElementsByTagName("button");
     $("#current-day").text(today.format("dddd, MMMM Do"));
  
     
-var timeSlot = 9;
+var timeSlot = 12;
+
+
 
 $( "textarea" ).each(function( index ) {
     console.log( index + ": " + $( this).each);
@@ -56,11 +58,11 @@ console.log(moment().format('HH'));
 // document.getElementById("saveBtn").addEventListener("click", saveInput());
 
 
-// function saveInput(){
-//     console.log(document.getElementById.previousElementSibling);
-// }
-// saveButton.addEventListener("click", function(event) {
-//     event.preventDefault();
+function saveInput(){
+    console.log(document.getElementById.previousElementSibling);
+}
+saveButton.addEventListener("click", function(event) {
+    event.preventDefault();
     
-//   });
+  });
 
