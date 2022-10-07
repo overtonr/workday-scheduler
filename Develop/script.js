@@ -10,18 +10,9 @@
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
     //past :: grey
     //present :: red
-    // future :: green
-    
+    // future :: green  
     
 var timeSlot = 21;
-//  $( "textarea" ).each(function() {
-//     $( this ).addClass( "slot" );
-//   });
-    
-
-console.log(timeSlot);
-console.log($("textarea").attr("id"));
-console.log($("textarea").attr("id"));
 
 
 var timeSlot = $('.slot').each(function() {
