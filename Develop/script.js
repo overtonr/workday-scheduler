@@ -11,18 +11,42 @@
     //past :: grey
     //present :: red
     // future :: green
-var timeSlot = "19";
+    
+    
+var timeSlot = 21;
+//  $( "textarea" ).each(function() {
+//     $( this ).addClass( "slot" );
+//   });
+    
+
+console.log(timeSlot);
+console.log($("textarea").attr("id"));
+console.log($("textarea").attr("id"));
+
+
+var timeSlot = $('.slot').each(function() {
+    if(timeSlot == moment().format('HH')){
+        $("textarea").addClass("present");
+    } else if(timeSlot <moment().format('HH')) {
+        $("textarea").addClass("past")
+    } else {
+        $("textarea").addClass("future")
+    };
+  });
+
 
 // console.log(timeSlot);
 console.log(moment().format('HH'));
 // console.log(typeof(moment().format('H HH')));
-if(timeSlot == moment().format('HH')){
-    $("textarea").addClass("present")
-} else if(timeSlot <moment().format('HH')) {
-    $("textarea").addClass("past")
-} else {
-    $("textarea").addClass("future")
-}
+
+
+// if(timeSlot == moment().format('HH')){
+//     $("textarea").addClass("present");
+// } else if(timeSlot <moment().format('HH')) {
+//     $("textarea").addClass("past")
+// } else {
+//     $("textarea").addClass("future")
+// };
 
 // WHEN I click into a timeblock
 // THEN I can enter an event
@@ -37,3 +61,8 @@ if(timeSlot == moment().format('HH')){
 //event.target or 'this' key word
 //traverse the DOM : to text area and store value of that text area
 
+// document.getElementById("saveBtn").addEventListener("click", saveInput());
+
+// function saveInput(){
+//     console.log(document.getElementById.previousElementSibling);
+// }
