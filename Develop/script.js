@@ -1,20 +1,21 @@
+var saveButton = document.getElementsByTagName("button");
 // WHEN I open the planner
 // THEN the current date is displayed at the top of the calendar
     // Thurs, Oct 6 2022
     var today = moment();
     $("#current-day").text(today.format("dddd, MMMM Do"));
-// WHEN I scroll down
-// THEN I am presented with timeblocks for standard business hours
-    // 9am to 5pm
-// WHEN I view the timeblocks for that day
+ 
+    
+var timeSlot = 9;
+
+$( "textarea" ).each(function( index ) {
+    console.log( index + ": " + $( this).each);
+  });
+
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
     //past :: grey
     //present :: red
-    // future :: green  
-    
-var timeSlot = 21;
-
-
+    // future :: green 
 var timeSlot = $('.slot').each(function() {
     if(timeSlot == moment().format('HH')){
         $("textarea").addClass("present");
@@ -54,6 +55,12 @@ console.log(moment().format('HH'));
 
 // document.getElementById("saveBtn").addEventListener("click", saveInput());
 
+
 // function saveInput(){
 //     console.log(document.getElementById.previousElementSibling);
 // }
+// saveButton.addEventListener("click", function(event) {
+//     event.preventDefault();
+    
+//   });
+
