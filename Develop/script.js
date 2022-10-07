@@ -1,6 +1,8 @@
 // WHEN I open the planner
 // THEN the current date is displayed at the top of the calendar
     // Thurs, Oct 6 2022
+    var today = moment();
+    $("#current-day").text(today.format("dddd, MMMM Do"));
 // WHEN I scroll down
 // THEN I am presented with timeblocks for standard business hours
     // 9am to 5pm
@@ -9,6 +11,19 @@
     //past :: grey
     //present :: red
     // future :: green
+var timeSlot = "19";
+
+// console.log(timeSlot);
+console.log(moment().format('HH'));
+// console.log(typeof(moment().format('H HH')));
+if(timeSlot == moment().format('HH')){
+    $("textarea").addClass("present")
+} else if(timeSlot <moment().format('HH')) {
+    $("textarea").addClass("past")
+} else {
+    $("textarea").addClass("future")
+}
+
 // WHEN I click into a timeblock
 // THEN I can enter an event
 // WHEN I click the save button for that timeblock
@@ -22,7 +37,3 @@
 //event.target or 'this' key word
 //traverse the DOM : to text area and store value of that text area
 
-
-
-var today = moment();
-$("#current-day").text(today.format("dddd, MMMM Do"));
