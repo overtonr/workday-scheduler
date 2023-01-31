@@ -1,4 +1,5 @@
-var saveButton = document.getElementsByTagName("button");
+var saveButton = document.querySelectorAll(".saveBtn");
+console.log(saveButton)
 // WHEN I open the planner
 // THEN the current date is displayed at the top of the calendar
     // Thurs, Oct 6 2022
@@ -6,7 +7,7 @@ var saveButton = document.getElementsByTagName("button");
     $("#current-day").text(today.format("dddd, MMMM Do"));
  
     
-var timeSlot = 12;
+var timeSlot = 18;
 
 
 
@@ -18,16 +19,22 @@ $( "textarea" ).each(function( index ) {
     //past :: grey
     //present :: red
     // future :: green 
-var timeSlot = $('.slot').each(function() {
-    if(timeSlot == moment().format('HH')){
-        $("textarea").addClass("present");
-    } else if(timeSlot <moment().format('HH')) {
-        $("textarea").addClass("past")
-    } else {
-        $("textarea").addClass("future")
+//var timeSlot = 
+$('.slot').each(function(i, value) {
+    var textareaId = parseInt(value.id);
+    var currentTime = parseInt(moment().format('HH'))
+    console.log(textareaId, currentTime)
+
+    if(textareaId == currentTime){
+        $(this).addClass("present");
+    } else if(textareaId < currentTime) {
+        $(this).addClass("past")
+    } else if(textareaId > currentTime) {
+        $(this).addClass("future")
     };
   });
 
+  
 
 // console.log(timeSlot);
 console.log(moment().format('HH'));
@@ -61,8 +68,25 @@ console.log(moment().format('HH'));
 function saveInput(){
     console.log(document.getElementById.previousElementSibling);
 }
-saveButton.addEventListener("click", function(event) {
+
+//vanilla js click for multiple items
+// for (var i = 0; i < saveButton.length;i++) {
+//     saveButton[i].addEventListener("click", function(event) {
+//         event.preventDefault();
+//         console.log(this)
+//       });
+// }
+
+$(".saveBtn").on("click", function(event) {
     event.preventDefault();
-    
+    var textValue = $(this).prev().val()
+    //save textValue to locastorage
+    localStorage.setItem(keyname, textValue)
   });
 
+//loop through each textareaa
+//each textarea, display value that you got from local storage
+
+//get textvalue from localstorage
+//and idsplay on each text area
+localStorage.getItem(keyname)
