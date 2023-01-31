@@ -28,6 +28,11 @@ textarea{
   border-radius: 0;
 }
 
+#current-day{
+  font-weight: 900;
+  /* text-decoration: underline; */
+}
+
 .description{
   white-space: pre-wrap;
 }
