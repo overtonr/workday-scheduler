@@ -81,7 +81,8 @@ $(".saveBtn").on("click", function(event) {
     event.preventDefault();
     var textValue = $(this).prev().val()
     //save textValue to locastorage
-    localStorage.setItem(keyname, textValue)
+    localStorage.setItem("inputTxt", textValue)
+    $(this).textContent = textValue;
   });
 
 //loop through each textareaa
@@ -89,4 +90,6 @@ $(".saveBtn").on("click", function(event) {
 
 //get textvalue from localstorage
 //and idsplay on each text area
-localStorage.getItem(keyname)
+var savedInp = localStorage.getItem("inputTxt");
+
+
