@@ -77,7 +77,22 @@ textarea{
   color: var(--white);
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
+.saveBtn:hover {
+  font-size: 17px;
+  transition: all .3s ease-in-out;
+}
+
+#clearBtn{
+  color: var(--white);
+  background-color: #b7b7b7;
+  border: none;
+  font-size: 15px;
+  border-radius: 15px;
+  width: 180px;
+  height: 30px;
+}
+
+#clearBtn:hover {
+  font-size: 17px;
   transition: all .3s ease-in-out;
 }
