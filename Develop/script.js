@@ -23,41 +23,43 @@ $(".slot").each(function (i, value) {
 //current hour
 console.log(moment().format("HH"));
 
-
 // document.getElementById("saveBtn").addEventListener("click", saveInput());
 
 //TODO: create an object using JQUERY
-// store each object to LS 
+// store each object to LS
 // parse in from the block ID, change the text area for that block to the stored texIn
-var index = $('<textarea>')[0];
-var textInput = $('<textarea>');
+var index = $("<textarea>");
+var textInput = $("<textarea>");
+
+console.log(index);
+console.log(textInput.value);
 
 // function renderItems(){
 //     //set each textarea content to the value stored in the LS for that specific TA id
 //     // $("saveBtn").previousElementSibling.value = "save";
+// some type of if function that validates the number slot
+// var task = localStorage.getItem("task")
+// $("slot").textContent = task;
 // };
-
 
 // function saveInput() {
 //   console.log(document.getElementById.previousElementSibling);
 // }
 
-// $(".saveBtn").on("click", function (event) {
-//   event.preventDefault();
-//   // var textValue = $(this).prev().val()
-//   var textValue = $(this).prev().val().trim();
-//   console.log(textValue);
-//   var index = event.target.previousElementSibling.getAttribute("id");
-//   console.log(index);
-//     //save textValue to locastorage
-//  localStorage.setItem(JSON.stringify(index), JSON.stringify(textValue))
-// });
-
 $(".saveBtn").on("click", function (event) {
-    event.preventDefault();
-    var task = {
-        hour: index,
-        textIn: textInput.value,
-    };
-   localStorage.setItem("task", JSON.stringify(task));
-  });
+  event.preventDefault();
+  var task = {
+    textValue: $(this).prev().val().trim(),
+    index: event.target.previousElementSibling.getAttribute("id"),
+  };
+  localStorage.setItem("task", JSON.stringify(task));
+});
+
+// $(".saveBtn").on("click", function (event) {
+//     event.preventDefault();
+//     var task = {
+//         hour: index.attr('id'),
+//         textIn: textInput.value,
+//     };
+//    localStorage.setItem("task", JSON.stringify(task));
+//   });
