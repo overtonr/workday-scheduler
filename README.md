@@ -4,7 +4,7 @@
 ## Description:
 This application is an hour-by-hour work day scheduler. Users can see the current date at the top of the page. They can also see a breakdown of their work day by hour. The save button ensures the events they input will be saved.
 
-![Screenshot of webpage](./assets/demo.gif)
+![Screenshot of webpage](./develop/assets/demo.gif)
 
 
 The save button saves the
